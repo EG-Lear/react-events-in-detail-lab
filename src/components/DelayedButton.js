@@ -3,8 +3,7 @@ import React, {Component} from 'react';
 class DelayedButton extends Component {
     handleClick = (event) => {
         event.persist()
-        const coords = [event.clientX, event.clientY]
-        setTimeout(this.props.onDelayedClick(coords), 10000)
+        setTimeout(() => {this.props.onDelayedClick(event)}, this.props.delay)
     }
 
     render () {
